@@ -3,10 +3,10 @@ package org.example.spring.react.service;
 import org.example.spring.react.config.JWTUtils;
 import org.example.spring.react.domain.RegisterRequest;
 import org.example.spring.react.entity.Users;
+import org.example.spring.react.exception.UserNotFoundException;
 import org.example.spring.react.repository.UserRepository;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -137,7 +137,7 @@ public class UserService {
     }
 
 
-    public RegisterRequest getUsersById(Integer id) {
+    public RegisterRequest getUsersById(Long id) {
         RegisterRequest reqRes = new RegisterRequest();
         try {
             Users usersById = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User Not found"));
@@ -152,7 +152,7 @@ public class UserService {
     }
 
 
-    public RegisterRequest deleteUser(Integer userId) {
+    public RegisterRequest deleteUser(Long userId) {
         RegisterRequest reqRes = new RegisterRequest();
         try {
             Optional<Users> userOptional = userRepository.findById(userId);
@@ -171,7 +171,7 @@ public class UserService {
         return reqRes;
     }
 
-    public RegisterRequest updateUser(Integer userId, Users updatedUser) {
+    public RegisterRequest updateUser(Long userId, Users updatedUser) {
         RegisterRequest reqRes = new RegisterRequest();
         try {
             Optional<Users> userOptional = userRepository.findById(userId);
@@ -245,4 +245,10 @@ public class UserService {
     }
 
 
+    public ResponseEntity<Users> findUser(Long userId) {
+        Optional<Users> userOptional = userRepository.findById(userId);
+        return userOptional
+                .map(ResponseEntity::ok)
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
+    }
 }

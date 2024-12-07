@@ -12,3 +12,17 @@ spring:
     password: root
 server:
   port: 8088
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org:
+      springframework:
+        messaging: debug
+        web:
+          socket: debug

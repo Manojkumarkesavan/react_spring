@@ -1,0 +1,10 @@
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (1, null, 'Manoj@gmail.com', 'Manoj', 'kumar', '$2a$10$.aAWSXt6VKDAbaLn6HtHbeRjfqOtHfGd9tX9CP0cshsTIeRsAA/cK', 'ADMIN');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (2, null, 'Sharmila@gmail.com', 'Sharmila', 'Asokan', '$2a$10$sQAo4cdEfNCYPvUrfVx0zu/ojdBilr.2ym8bLSFu9xl.GCccx2pJ6', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (3, null, 'Santhosh.l@gmail.com', 'Santhosh ', 'Loganathan', '$2a$10$mRcHEUz.Bnl3Ak.fednyteH93Qmzwl7nSdKzJRDB6OUGLVlDjuHqm', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (4, null, 'Santosh@gmail.com', 'Santosh', 'kumar', '$2a$10$TcYQ3Ox.0lasr1DefrWJuO1UR4sPMZRrKs6d66Bq9AoChr22DGuem', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (5, null, 'Ashan@gmail.com', 'Mohammed', 'Ashan', '$2a$10$mS0QI152HT/tVuPd3RgccuSjZgzq/BNnOepTQHOmQcTyxmb8IOw/y', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (6, null, 'Rajaram@gmail.com', 'Rajaram', 'Rajendran', '$2a$10$Gsr0LSf/yWpBz/fJVt7tYu8696hqjMEL057i5r4ajZWJbP/iEat9G', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (7, null, 'Sharmila.d@gmail.com', 'Sharmila', 'D', '$2a$10$rhXJ/lVIbeAXS93S.DmvgeX8gqOc9.j0q/Kc8NP/tUjgRQB.fbrjW', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (8, null, 'Tavish@gmail.com', 'Tavish', 'Prakash', '$2a$10$2RkEDy9.62WTvYIccwwl8ONZUj5wiKoMfR//a6fx3NGgLohluYn/u', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (9, null, 'Vignesh@gmail.com', 'Vignesh', 'M', '$2a$10$4KMSyCjzSv5S/mbU2TvqiOv1PdPjD7Vh1jYSTOKC7OepQ4etsVd2C', 'USER');
+INSERT INTO public.users (id, city, email, first_name, last_name, password, role) VALUES (10, null, 'Suresh@gmail.com', 'Suresh', 'Uthay', '$2a$10$PPBqmQ0i.LCkUkDzjTEzOe8FNGCLFHb3.YSt4qxltvR3do7/N4mIi', 'USER');

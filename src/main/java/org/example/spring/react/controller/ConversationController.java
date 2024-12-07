@@ -11,14 +11,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "*")
 @RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/api/conversations")
 public class ConversationController {
 
-    @Autowired
-    private ConversationRepository conversationRepository;
+    private final ConversationRepository conversationRepository;
 
-    @PostMapping("/api/conversations")
+    public ConversationController(ConversationRepository conversationRepository) {
+        this.conversationRepository = conversationRepository;
+    }
+
+    @PostMapping
     public ResponseEntity<?> createOrGetConversation(@RequestBody Map<String, Long> users) {
         Long user1 = users.get("user1");
         Long user2 = users.get("user2");
@@ -36,7 +40,7 @@ public class ConversationController {
         }
     }
 
-    @GetMapping("/api/conversations/{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<?> getConversations(@PathVariable Long userId) {
         List<Conversation> conversations = conversationRepository.findByUserId(userId);
         return ResponseEntity.ok(conversations);
